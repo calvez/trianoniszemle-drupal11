@@ -1,0 +1,4 @@
+# Site address for command-line runs (cron, sitemap generation, emails).
+# CHANGE THIS to https://trianoniszemle.hu at cutover.
+options:
+  uri: 'https://trianon.clvz.dev'

@@ -1,0 +1,23 @@
+_core:
+  default_config_hash: 25hWeYa4sasuJtHqKKcEN_nYiuEC1lMPYHsn5dawJEw
+links:
+  -
+    path: /
+    priority: '1'
+    changefreq: weekly
+  -
+    path: /evfolyamok
+    priority: '0.9'
+    changefreq: monthly
+  -
+    path: /blog
+    priority: '0.8'
+    changefreq: monthly
+  -
+    path: /repertorium
+    priority: '0.8'
+    changefreq: monthly
+  -
+    path: /szerzok
+    priority: '0.8'
+    changefreq: monthly
