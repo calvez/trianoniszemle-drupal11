@@ -1,4 +1,4 @@
-uuid: 91a6cb01-5682-4e1e-b844-4df15f6837b7
+uuid: 97d34998-650b-400a-863e-36caa395955c
 langcode: hu
 status: true
 dependencies:
@@ -7,8 +7,10 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_kategoria
     - field.field.node.blog_post.field_kep
+    - image.style.medium
     - node.type.blog_post
   module:
+    - image
     - text
     - user
 id: node.blog_post.teaser
@@ -20,9 +22,20 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    weight: 101
+    weight: 1
+    region: content
+  field_kep:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
     region: content
   links:
     settings: {  }
@@ -31,5 +44,4 @@ content:
     region: content
 hidden:
   field_kategoria: true
-  field_kep: true
   langcode: true

@@ -1,0 +1,8 @@
+name: 'Trianoni Szemle CSV import'
+type: module
+description: 'Drush command to import new issues/articles/authors from a CSV file (core APIs only).'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:file

@@ -1,0 +1,29 @@
+uuid: 9d231d0f-a22b-4f7c-888d-64f9dfa22826
+langcode: hu
+status: true
+dependencies:
+  config:
+    - views.view.lapszamok
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: olivero_front_lapszamok_block_latest
+theme: olivero
+region: content
+weight: 11
+provider: null
+plugin: 'views_block:lapszamok-block_latest'
+settings:
+  id: 'views_block:lapszamok-block_latest'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
