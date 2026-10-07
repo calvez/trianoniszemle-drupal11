@@ -23,7 +23,7 @@ settings:
   file_directory: 'kepek/[date:custom:Y]'
   file_extensions: 'png gif jpg jpeg webp'
   max_filesize: '10 MB'
-  max_resolution: ''
+  max_resolution: 1200x1200
   min_resolution: ''
   alt_field: true
   alt_field_required: false

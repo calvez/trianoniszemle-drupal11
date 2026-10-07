@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_csatolmany
     - field.field.node.blog_post.field_kategoria
     - field.field.node.blog_post.field_kep
-    - image.style.large
+    - image.style.wide
     - node.type.blog_post
   module:
+    - file
     - image
     - text
     - user
@@ -24,12 +26,20 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_csatolmany:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 20
+    region: content
   field_kep:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: wide
       image_loading:
         attribute: lazy
     third_party_settings: {  }

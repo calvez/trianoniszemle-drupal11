@@ -1,0 +1,22 @@
+uuid: 2ad479f6-8383-472c-8354-46bc0da79146
+langcode: hu
+status: true
+dependencies:
+  theme:
+    - default_admin
+_core:
+  default_config_hash: KxeVrufbNdEHyWTX59ecZS4IKqRyAZHDmElZrPbUMmo
+id: default_admin_primary_local_tasks
+theme: default_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Elsődleges fülek'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

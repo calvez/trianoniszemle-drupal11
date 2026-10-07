@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_csatolmany
     - field.field.node.blog_post.field_kategoria
     - field.field.node.blog_post.field_kep
     - image.style.large
@@ -44,6 +45,7 @@ content:
     region: content
 hidden:
   field_alcim: true
+  field_csatolmany: true
   field_evfolyam: true
   field_kategoria: true
   field_lapszam: true

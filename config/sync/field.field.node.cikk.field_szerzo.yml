@@ -23,4 +23,6 @@ settings:
       szerzo: szerzo
     sort:
       field: _none
+    auto_create: true
+    auto_create_bundle: szerzo
 field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 36ba69de-9c96-41f1-8ed7-57f15f334287
+langcode: hu
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - default_admin
+_core:
+  default_config_hash: A0bSgTfhz7M_3ljjCoyrdKWwh-8s_9VsLVJzb4fzE3c
+id: default_admin_content
+theme: default_admin
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Az oldal fő tartalma'
+  label_display: '0'
+  provider: system
+visibility: {  }

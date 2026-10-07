@@ -1,0 +1,27 @@
+uuid: 00ceaeb7-715c-4815-be87-d48332f7733f
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_csatolmany
+    - node.type.blog_post
+  module:
+    - file
+id: node.blog_post.field_csatolmany
+field_name: field_csatolmany
+entity_type: node
+bundle: blog_post
+label: 'Letölthető dokumentumok'
+description: 'PDF, Word, Excel stb. fájlok, amelyek az oldal alján letölthető listaként jelennek meg.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'dokumentumok/[date:custom:Y]'
+  file_extensions: 'pdf doc docx xls xlsx ppt pptx odt ods txt zip'
+  max_filesize: '25 MB'
+  description_field: true
+field_type: file

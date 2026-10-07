@@ -55,4 +55,5 @@ module:
 theme:
   claro: 0
   tsz: 0
+  default_admin: 0
 profile: standard

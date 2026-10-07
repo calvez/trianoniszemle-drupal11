@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_csatolmany
     - node.type.page
   module:
+    - file
     - text
     - user
 id: node.page.default
@@ -19,6 +21,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_csatolmany:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 20
     region: content
   links:
     settings: {  }

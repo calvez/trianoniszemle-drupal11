@@ -21,30 +21,24 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 5
     region: content
     settings:
-      rows: 9
+      rows: 14
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_evfolyam:
     type: number
-    weight: 126
+    weight: 1
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_kep:
     type: image_image
-    weight: 129
+    weight: 4
     region: content
     settings:
       progress_indicator: throbber
@@ -52,7 +46,7 @@ content:
     third_party_settings: {  }
   field_lapszam:
     type: string_textfield
-    weight: 127
+    weight: 2
     region: content
     settings:
       size: 60
@@ -60,7 +54,7 @@ content:
     third_party_settings: {  }
   field_sorszam:
     type: number
-    weight: 128
+    weight: 3
     region: content
     settings:
       placeholder: ''
@@ -74,33 +68,28 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 30
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
+      size: 80
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
@@ -109,5 +98,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  created: true
   promote: true
   sticky: true
+  uid: true

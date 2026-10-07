@@ -2,9 +2,17 @@ uuid: 6d10acde-cfc6-4394-b20a-f76d34f46873
 langcode: hu
 status: true
 dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.blog_post
+    - node.type.cikk
+    - node.type.lapszam
+    - node.type.page
+    - node.type.szerzo
   module:
     - contextual
     - file
+    - filter
     - node
     - path
     - system
@@ -19,10 +27,37 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'administer nodes'
   - 'administer url aliases'
+  - 'create blog_post content'
+  - 'create cikk content'
+  - 'create lapszam content'
+  - 'create page content'
+  - 'create szerzo content'
   - 'create url aliases'
+  - 'delete any blog_post content'
+  - 'delete any cikk content'
+  - 'delete any lapszam content'
+  - 'delete any page content'
+  - 'delete any szerzo content'
+  - 'delete own blog_post content'
+  - 'delete own cikk content'
   - 'delete own files'
+  - 'delete own lapszam content'
+  - 'delete own page content'
+  - 'delete own szerzo content'
+  - 'edit any blog_post content'
+  - 'edit any cikk content'
+  - 'edit any lapszam content'
+  - 'edit any page content'
+  - 'edit any szerzo content'
+  - 'edit own blog_post content'
+  - 'edit own cikk content'
+  - 'edit own lapszam content'
+  - 'edit own page content'
+  - 'edit own szerzo content'
   - 'revert all revisions'
+  - 'use text format full_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
