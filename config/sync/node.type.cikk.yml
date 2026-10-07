@@ -1,0 +1,11 @@
+uuid: 1f09777e-2960-4dd0-b4c3-687f2dab4a5e
+langcode: hu
+status: true
+dependencies: {  }
+name: Cikk
+type: cikk
+description: 'Egy Trianoni Szemle cikk: szerző, lapszám, oldalszám, opcionális PDF.'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

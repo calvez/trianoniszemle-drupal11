@@ -1,0 +1,35 @@
+uuid: 6ceb9151-5b2e-497c-910b-8ec5900c5ef8
+langcode: hu
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.szerzo.body
+    - field.field.node.szerzo.field_kep
+    - field.field.node.szerzo.field_tipus
+    - node.type.szerzo
+  module:
+    - text
+    - user
+id: node.szerzo.teaser
+targetEntityType: node
+bundle: szerzo
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_kep: true
+  field_tipus: true
+  langcode: true

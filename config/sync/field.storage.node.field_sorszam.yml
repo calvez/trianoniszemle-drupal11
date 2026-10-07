@@ -1,0 +1,20 @@
+uuid: dd79705e-6946-4090-8095-b9afcd776988
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_sorszam
+field_name: field_sorszam
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+uuid: 1f764334-a401-4455-9975-e8192800f422
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf
+    - node.type.cikk
+  module:
+    - file
+id: node.cikk.field_pdf
+field_name: field_pdf
+entity_type: node
+bundle: cikk
+label: PDF
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'pdf/[date:custom:Y]'
+  file_extensions: pdf
+  max_filesize: '50 MB'
+  description_field: false
+field_type: file

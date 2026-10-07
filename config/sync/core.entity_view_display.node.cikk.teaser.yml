@@ -1,0 +1,41 @@
+uuid: 0b16f7fa-b1dc-4397-9667-5e1fec3ca63c
+langcode: hu
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cikk.body
+    - field.field.node.cikk.field_alcim
+    - field.field.node.cikk.field_oldalszam
+    - field.field.node.cikk.field_pdf
+    - field.field.node.cikk.field_szam
+    - field.field.node.cikk.field_szerzo
+    - node.type.cikk
+  module:
+    - text
+    - user
+id: node.cikk.teaser
+targetEntityType: node
+bundle: cikk
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_alcim: true
+  field_oldalszam: true
+  field_pdf: true
+  field_szam: true
+  field_szerzo: true
+  langcode: true

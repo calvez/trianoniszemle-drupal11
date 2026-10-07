@@ -1,0 +1,13 @@
+uuid: a85973ad-7a06-4ec3-92b5-53235f3a7fd1
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: lDM9mvIGAu8Sw8rt-uCO4Sr7yX5VPrDPxYcawkbKd6k
+id: node_make_unsticky_action
+label: 'Tartalom kiemelésének megszüntetése'
+type: node
+plugin: node_make_unsticky_action
+configuration: {  }

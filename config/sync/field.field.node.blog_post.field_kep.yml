@@ -1,0 +1,38 @@
+uuid: 6dd3f0c2-beb9-4d20-8ae5-ee82d13f195d
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kep
+    - node.type.blog_post
+  module:
+    - image
+id: node.blog_post.field_kep
+field_name: field_kep
+entity_type: node
+bundle: blog_post
+label: Főkép
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'kepek/[date:custom:Y]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: '10 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

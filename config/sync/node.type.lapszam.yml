@@ -1,0 +1,11 @@
+uuid: faf61c35-7735-4e46-80df-6d84514b937c
+langcode: hu
+status: true
+dependencies: {  }
+name: Lapszám
+type: lapszam
+description: 'A Trianoni Szemle egy lapszáma / kiadványa.'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

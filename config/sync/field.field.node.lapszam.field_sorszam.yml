@@ -1,0 +1,23 @@
+uuid: fd989b5a-bc7b-4920-ac40-0ae5ac88a0d8
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sorszam
+    - node.type.lapszam
+id: node.lapszam.field_sorszam
+field_name: field_sorszam
+entity_type: node
+bundle: lapszam
+label: 'Sorszám (rendezéshez)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

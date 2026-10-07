@@ -1,0 +1,21 @@
+uuid: fe8f181e-d67d-4300-84be-df7607f884fb
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipus
+    - node.type.szerzo
+  module:
+    - options
+id: node.szerzo.field_tipus
+field_name: field_tipus
+entity_type: node
+bundle: szerzo
+label: Típus
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,24 @@
+uuid: 48e4ddde-b444-46bb-9e03-17f0e46c8a1b
+langcode: hu
+status: true
+dependencies:
+  config:
+    - node.type.blog_post
+  module:
+    - node
+id: tz_blog_post
+label: Blogbejegyzés
+type: 'canonical_entities:node'
+pattern: '/blog/[node:title]'
+selection_criteria:
+  uuid-blog_post:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      blog_post: blog_post
+    uuid: uuid-blog_post
+selection_logic: and
+weight: 0
+relationships: {  }

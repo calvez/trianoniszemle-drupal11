@@ -1,0 +1,26 @@
+uuid: c079fc19-cfb1-45bf-a61c-1efe13424e63
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_szerzo
+    - node.type.cikk
+    - node.type.szerzo
+id: node.cikk.field_szerzo
+field_name: field_szerzo
+entity_type: node
+bundle: cikk
+label: Szerző(k)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      szerzo: szerzo
+    sort:
+      field: _none
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 2a3458ec-dd98-4231-ac43-78ec76c10fae
+langcode: hu
+status: true
+dependencies:
+  config:
+    - node.type.cikk
+  module:
+    - node
+id: tz_cikk
+label: Cikk
+type: 'canonical_entities:node'
+pattern: '/[node:field_szam:entity:title]/[node:field_szerzo:0:entity:title]-[node:title]'
+selection_criteria:
+  uuid-cikk:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      cikk: cikk
+    uuid: uuid-cikk
+selection_logic: and
+weight: 0
+relationships: {  }

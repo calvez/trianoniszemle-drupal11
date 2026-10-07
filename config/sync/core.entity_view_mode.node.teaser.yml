@@ -1,0 +1,13 @@
+uuid: 617aa593-fd3a-40ad-9971-7c556c26c212
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: KgGJDZFpMaz_8bTv6fN1bXS3Qi5LWmRJI9R53kEGsNQ
+id: node.teaser
+label: Bevezető
+description: ''
+targetEntityType: node
+cache: true

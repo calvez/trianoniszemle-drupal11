@@ -1,0 +1,10 @@
+uuid: 71806df5-ee57-47a9-963e-eea0a03808cc
+langcode: hu
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Fő navigáció'
+description: 'Webhely alegységeire mutató hivatkozások'
+locked: true

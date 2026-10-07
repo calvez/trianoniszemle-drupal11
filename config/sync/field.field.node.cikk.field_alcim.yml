@@ -1,0 +1,19 @@
+uuid: 1aa63f09-162a-48ff-b1b9-889add58dc19
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alcim
+    - node.type.cikk
+id: node.cikk.field_alcim
+field_name: field_alcim
+entity_type: node
+bundle: cikk
+label: Alcím
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

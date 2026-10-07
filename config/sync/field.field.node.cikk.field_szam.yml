@@ -1,0 +1,26 @@
+uuid: f6ecd69e-dc48-474c-acad-48051b825851
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_szam
+    - node.type.cikk
+    - node.type.lapszam
+id: node.cikk.field_szam
+field_name: field_szam
+entity_type: node
+bundle: cikk
+label: Lapszám
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lapszam: lapszam
+    sort:
+      field: _none
+field_type: entity_reference

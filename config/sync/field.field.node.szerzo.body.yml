@@ -1,0 +1,24 @@
+uuid: 826c004f-9f83-4d43-aa88-816181fa91a3
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.szerzo
+  module:
+    - text
+id: node.szerzo.body
+field_name: body
+entity_type: node
+bundle: szerzo
+label: Szöveg
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,11 @@
+uuid: 2c36dbce-e118-4ef4-a577-68e3b2dbe841
+langcode: hu
+status: true
+dependencies: {  }
+name: Szerző
+type: szerzo
+description: 'A Trianoni Szemle szerzői és kapcsolódó személyek.'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

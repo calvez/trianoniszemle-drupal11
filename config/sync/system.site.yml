@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: hu
+uuid: 8364bb2f-bae8-4e5a-945f-1cc343cd060e
+name: 'Trianoni Szemle'
+mail: nemeth.lorant@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: hu
+mail_notification: null

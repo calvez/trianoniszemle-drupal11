@@ -1,0 +1,23 @@
+uuid: a80804fb-2346-4cd3-b6f6-eba6cd620f3f
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldalszam
+    - node.type.cikk
+id: node.cikk.field_oldalszam
+field_name: field_oldalszam
+entity_type: node
+bundle: cikk
+label: Oldalszám
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

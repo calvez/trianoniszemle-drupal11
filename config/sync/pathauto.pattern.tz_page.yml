@@ -1,0 +1,24 @@
+uuid: 893fcc45-d48b-4407-a45e-9667f047526f
+langcode: hu
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - node
+id: tz_page
+label: Oldal
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  uuid-page:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+    uuid: uuid-page
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,9 @@
+uuid: 28ad7afe-e6f8-42bb-a78e-3ef5734c0476
+langcode: hu
+status: true
+dependencies: {  }
+name: 'Blog kategória'
+vid: blog_kategoria
+description: null
+weight: 0
+new_revision: false

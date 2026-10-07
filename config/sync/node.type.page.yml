@@ -1,0 +1,11 @@
+uuid: 32373476-d3b7-4123-887f-c8d797c2e751
+langcode: hu
+status: true
+dependencies: {  }
+name: Oldal
+type: page
+description: 'Statikus oldalak (Rólunk, Kapcsolat, Szabályzatok stb.).'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

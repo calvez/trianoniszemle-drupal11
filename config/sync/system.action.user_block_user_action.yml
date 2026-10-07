@@ -1,0 +1,13 @@
+uuid: b311b0a4-2ae6-442f-a3a5-0b9cfaf9984c
+langcode: hu
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: DyypzTfThX10FFQw-399qPfEbLLyrhXgQrKPVsmAoJ4
+id: user_block_user_action
+label: 'A kiválasztott felhasználó tiltása'
+type: user
+plugin: user_block_user_action
+configuration: {  }

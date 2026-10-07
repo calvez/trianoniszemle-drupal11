@@ -1,0 +1,22 @@
+uuid: 390c1b49-fb42-4200-b061-f514c79d1d02
+langcode: hu
+status: true
+dependencies:
+  theme:
+    - claro
+_core:
+  default_config_hash: 2L0geP-ixCbCkEpW6BVF6H7vDUZN4ea07_Y9CociQm4
+id: claro_secondary_local_tasks
+theme: claro
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Másodlagos fülek'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

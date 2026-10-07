@@ -1,0 +1,39 @@
+uuid: d8b77d15-85bf-4745-8af3-78012141007c
+langcode: hu
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lapszam.body
+    - field.field.node.lapszam.field_evfolyam
+    - field.field.node.lapszam.field_kep
+    - field.field.node.lapszam.field_lapszam
+    - field.field.node.lapszam.field_sorszam
+    - node.type.lapszam
+  module:
+    - text
+    - user
+id: node.lapszam.teaser
+targetEntityType: node
+bundle: lapszam
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_evfolyam: true
+  field_kep: true
+  field_lapszam: true
+  field_sorszam: true
+  langcode: true

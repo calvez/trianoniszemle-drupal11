@@ -1,0 +1,25 @@
+uuid: 6555885a-bb9a-44ba-beac-d2d5d958c64f
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kategoria
+    - node.type.blog_post
+    - taxonomy.vocabulary.blog_kategoria
+id: node.blog_post.field_kategoria
+field_name: field_kategoria
+entity_type: node
+bundle: blog_post
+label: Kategória
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      blog_kategoria: blog_kategoria
+    auto_create: true
+field_type: entity_reference

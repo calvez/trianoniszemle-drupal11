@@ -1,0 +1,11 @@
+uuid: fba7c8fc-d847-4785-a703-79f93f2ca846
+langcode: hu
+status: true
+dependencies: {  }
+name: Blogbejegyzés
+type: blog_post
+description: 'Hírek, események, bejelentések.'
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

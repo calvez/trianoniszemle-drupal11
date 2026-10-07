@@ -1,0 +1,13 @@
+uuid: 6ef31ecc-ccc3-4572-819a-088bcc311cad
+langcode: hu
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 1TFiplNN7Wmj_DtVLLLP-NLPYpZJdAswKY-vTrYgFyo
+id: user.register
+label: 'Felhasználó létrehozása'
+description: null
+targetEntityType: user
+cache: true

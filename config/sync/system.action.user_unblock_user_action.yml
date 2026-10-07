@@ -1,0 +1,13 @@
+uuid: f6983cbb-9d6f-409f-82a1-f8bbcdf64456
+langcode: hu
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: SPsUXsR3Rc8d1y3gewzaAKWa1ncea_ywXX3f7LTn7k0
+id: user_unblock_user_action
+label: 'A kiválasztott felhasználó tiltásának feloldása'
+type: user
+plugin: user_unblock_user_action
+configuration: {  }

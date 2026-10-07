@@ -1,0 +1,22 @@
+uuid: 7fe52d4a-4d28-45d1-bcaf-07a20f5c5ad7
+langcode: hu
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: olivero_content
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Az oldal fő tartalma'
+  label_display: '0'
+  provider: system
+visibility: {  }

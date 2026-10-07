@@ -1,0 +1,52 @@
+uuid: 6612ce91-3a80-48ef-a1b2-52e7e13288d2
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.field.node.szerzo.body
+    - field.field.node.szerzo.field_kep
+    - field.field.node.szerzo.field_tipus
+    - image.style.medium
+    - node.type.szerzo
+  module:
+    - image
+    - options
+    - text
+    - user
+id: node.szerzo.default
+targetEntityType: node
+bundle: szerzo
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_kep:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_tipus:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

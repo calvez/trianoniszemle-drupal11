@@ -1,0 +1,24 @@
+uuid: 63245f44-45df-473c-a055-a4a91b6c8ea5
+langcode: hu
+status: true
+dependencies:
+  config:
+    - node.type.szerzo
+  module:
+    - node
+id: tz_szerzo
+label: Szerző
+type: 'canonical_entities:node'
+pattern: '/szerzo/[node:title]'
+selection_criteria:
+  uuid-szerzo:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      szerzo: szerzo
+    uuid: uuid-szerzo
+selection_logic: and
+weight: 0
+relationships: {  }

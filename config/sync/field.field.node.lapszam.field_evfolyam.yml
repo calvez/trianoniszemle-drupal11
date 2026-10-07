@@ -1,0 +1,23 @@
+uuid: 8e38751b-a5e5-4777-aa38-a33d1a4ce5b7
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_evfolyam
+    - node.type.lapszam
+id: node.lapszam.field_evfolyam
+field_name: field_evfolyam
+entity_type: node
+bundle: lapszam
+label: Évfolyam
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

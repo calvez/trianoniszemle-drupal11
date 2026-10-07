@@ -1,0 +1,20 @@
+uuid: 07bddf8a-2222-4f1a-aebe-aaf125378b78
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_oldalszam
+field_name: field_oldalszam
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

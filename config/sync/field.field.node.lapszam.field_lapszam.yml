@@ -1,0 +1,19 @@
+uuid: 8d880582-69b6-40e6-835f-5860f1899a47
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lapszam
+    - node.type.lapszam
+id: node.lapszam.field_lapszam
+field_name: field_lapszam
+entity_type: node
+bundle: lapszam
+label: 'Lapszám jelölése'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

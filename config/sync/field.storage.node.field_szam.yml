@@ -1,0 +1,19 @@
+uuid: 299ed26f-375e-4938-8c12-3b19093d6d70
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_szam
+field_name: field_szam
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

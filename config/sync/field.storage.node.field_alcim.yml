@@ -1,0 +1,21 @@
+uuid: 3b4ed995-aa3c-4784-8f3e-e4634232a80e
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_alcim
+field_name: field_alcim
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

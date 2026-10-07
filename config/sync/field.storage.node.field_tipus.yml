@@ -1,0 +1,27 @@
+uuid: 833d91fb-3581-41b1-94db-cf713e755488
+langcode: hu
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_tipus
+field_name: field_tipus
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Szerző
+      label: Szerző
+    -
+      value: 'Kapcsolódó személy'
+      label: 'Kapcsolódó személy'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
