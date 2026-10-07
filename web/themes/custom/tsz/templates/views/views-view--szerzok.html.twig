@@ -1,0 +1,8 @@
+{# Author index: A-Z navigation above the cards. The exposed filter is driven by the links. #}
+{% if alphabet %}{{ alphabet }}{% endif %}
+<div{{ attributes.addClass('view', 'view-' ~ id|clean_class, 'view-id-' ~ id, 'view-display-id-' ~ display_id) }}>
+  {{ title_prefix }}{{ title }}{{ title_suffix }}
+  {{ rows }}
+  {{ pager }}
+  {{ empty }}
+</div>

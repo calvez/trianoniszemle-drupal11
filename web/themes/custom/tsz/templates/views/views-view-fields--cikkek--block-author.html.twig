@@ -1,0 +1,5 @@
+{# Author's articles row: "2017 / 3-4 · 242. oldal · Title (PDF)" #}
+{% set pdf = fields.field_pdf.content|render|striptags|trim %}
+<span class="toc__page">{{ fields.field_szam.content }}</span>
+{% if fields.field_oldalszam.content|render|striptags|trim %} · {{ fields.field_oldalszam.content|render|striptags|trim }}. oldal{% endif %}
+ · <span class="toc__title">{{ fields.title.content }}</span>{% if pdf %} · <a href="{{ pdf }}">PDF</a>{% endif %}

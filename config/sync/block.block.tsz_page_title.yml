@@ -1,0 +1,18 @@
+uuid: cf5288de-4c3a-47f3-845b-8d3dd576c482
+langcode: hu
+status: true
+dependencies:
+  theme:
+    - tsz
+id: tsz_page_title
+theme: tsz
+region: hero
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: Oldalcím
+  label_display: '0'
+  provider: core
+visibility: {  }

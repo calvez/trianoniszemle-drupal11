@@ -1,0 +1,25 @@
+uuid: 1f9231d0-c067-4d1b-aa77-cace8a27fd5c
+langcode: hu
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - tsz
+id: tsz_main_menu
+theme: tsz
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Fő navigáció'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

@@ -30,6 +30,15 @@ content:
     weight: 100
     region: content
 hidden:
+  field_alcim: true
+  field_evfolyam: true
+  field_kategoria: true
   field_kep: true
+  field_lapszam: true
+  field_oldalszam: true
+  field_pdf: true
+  field_sorszam: true
+  field_szam: true
+  field_szerzo: true
   field_tipus: true
   langcode: true

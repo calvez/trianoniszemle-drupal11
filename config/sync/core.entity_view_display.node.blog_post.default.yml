@@ -24,14 +24,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_kategoria:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 105
-    region: content
   field_kep:
     type: image
     label: hidden
@@ -49,4 +41,14 @@ content:
     weight: 100
     region: content
 hidden:
+  field_alcim: true
+  field_evfolyam: true
+  field_kategoria: true
+  field_lapszam: true
+  field_oldalszam: true
+  field_pdf: true
+  field_sorszam: true
+  field_szam: true
+  field_szerzo: true
+  field_tipus: true
   langcode: true

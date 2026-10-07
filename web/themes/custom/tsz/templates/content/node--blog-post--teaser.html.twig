@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Blog post card (listing, homepage).
+ */
+#}
+{% set has_image = node.field_kep.entity is not empty %}
+<article{{ attributes.addClass('card', has_image ? '' : 'card--noimage') }}>
+  {% if has_image %}<a class="card__media" href="{{ url }}" tabindex="-1" aria-hidden="true">{{ content.field_kep }}</a>{% endif %}
+  <div class="card__body">
+    <p class="card__date"><time datetime="{{ node.createdtime|date('c') }}">{{ created_date }}</time></p>
+    <h2 class="card__title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+    <div class="card__text">{{ content.body }}</div>
+  </div>
+</article>

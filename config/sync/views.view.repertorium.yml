@@ -1,0 +1,298 @@
+uuid: 7c938cc3-cd1f-4621-89a6-3d315598f79b
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alcim
+    - field.storage.node.field_oldalszam
+    - field.storage.node.field_pdf
+    - field.storage.node.field_szam
+    - field.storage.node.field_szerzo
+    - node.type.cikk
+    - system.menu.main
+  module:
+    - file
+    - node
+    - user
+id: repertorium
+label: Repertórium
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Alapértelmezett
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Repertórium
+      fields:
+        field_szam:
+          id: field_szam
+          table: node__field_szam
+          field: field_szam
+          relationship: none
+          plugin_id: field
+          label: Lapszám
+          type: entity_reference_label
+          settings:
+            link: true
+        field_szerzo:
+          id: field_szerzo
+          table: node__field_szerzo
+          field: field_szerzo
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: Szerző
+          element_label_colon: false
+          type: entity_reference_label
+          settings:
+            link: true
+          delta_limit: 0
+          multi_type: separator
+          separator: ', '
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: Cím
+          element_label_colon: false
+          type: string
+          settings:
+            link_to_entity: true
+        field_alcim:
+          id: field_alcim
+          table: node__field_alcim
+          field: field_alcim
+          relationship: none
+          plugin_id: field
+          label: Alcím
+          element_label_colon: false
+          type: string
+          settings:
+            link_to_entity: false
+        field_oldalszam:
+          id: field_oldalszam
+          table: node__field_oldalszam
+          field: field_oldalszam
+          relationship: none
+          plugin_id: field
+          label: Oldalszám
+          element_label_colon: false
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+        field_pdf:
+          id: field_pdf
+          table: node__field_pdf
+          field: field_pdf
+          relationship: none
+          plugin_id: field
+          label: PDF
+          alter:
+            alter_text: true
+            text: '<a href="{{ field_pdf }}">PDF</a>'
+          element_label_colon: false
+          empty: '-'
+          hide_empty: false
+          type: file_url_plain
+          settings: {  }
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 50
+          tags:
+            next: 'Következő ›'
+            previous: '‹ Előző'
+            first: '« Első'
+            last: 'Utolsó »'
+          quantity: 7
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Keresés
+          reset_button: false
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
+          empty: true
+          content: '<p>Nincs a keresésnek megfelelő cikk.</p>'
+      sorts:
+        field_sorszam_value:
+          id: field_sorszam_value
+          table: node__field_sorszam
+          field: field_sorszam_value
+          relationship: field_szam
+          plugin_id: standard
+          order: DESC
+        field_oldalszam_value:
+          id: field_oldalszam_value
+          table: node__field_oldalszam
+          field: field_oldalszam_value
+          relationship: none
+          plugin_id: standard
+          order: ASC
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            cikk: cikk
+          group: 1
+        combine:
+          id: combine
+          table: views
+          field: combine
+          plugin_id: combine
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: 'Cím vagy alcím'
+            identifier: szoveg
+            required: false
+            remember: false
+          fields:
+            title: title
+            field_alcim: field_alcim
+        szerzo_nev:
+          id: szerzo_nev
+          table: node_field_data
+          field: title
+          relationship: field_szerzo
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: szerzo_op
+            label: Szerző
+            identifier: szerzo
+            required: false
+            remember: false
+      style:
+        type: table
+        options:
+          columns:
+            field_szam: field_szam
+            field_szerzo: field_szerzo
+            title: title
+            field_alcim: field_alcim
+            field_oldalszam: field_oldalszam
+            field_pdf: field_pdf
+          default: '-1'
+          info: {  }
+          sticky: false
+          empty_table: false
+      row:
+        type: fields
+        options: {  }
+      query:
+        type: views_query
+        options:
+          distinct: true
+      relationships:
+        field_szam:
+          id: field_szam
+          table: node__field_szam
+          field: field_szam
+          relationship: none
+          group_type: group
+          admin_label: Lapszám
+          entity_type: node
+          plugin_id: standard
+          required: false
+        field_szerzo:
+          id: field_szerzo
+          table: node__field_szerzo
+          field: field_szerzo
+          relationship: none
+          group_type: group
+          admin_label: Szerző
+          entity_type: node
+          plugin_id: standard
+          required: false
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_alcim'
+        - 'config:field.storage.node.field_oldalszam'
+        - 'config:field.storage.node.field_pdf'
+        - 'config:field.storage.node.field_szam'
+        - 'config:field.storage.node.field_szerzo'
+  page_1:
+    id: page_1
+    display_title: Oldal
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: repertorium
+      menu:
+        type: normal
+        title: Repertórium
+        weight: 2
+        menu_name: main
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_alcim'
+        - 'config:field.storage.node.field_oldalszam'
+        - 'config:field.storage.node.field_pdf'
+        - 'config:field.storage.node.field_szam'
+        - 'config:field.storage.node.field_szerzo'

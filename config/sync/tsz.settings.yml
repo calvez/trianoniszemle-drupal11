@@ -1,0 +1,9 @@
+logo:
+  use_default: false
+  path: 'public://logo/header_logo.png'
+favicon:
+  use_default: false
+  path: 'public://logo/Trianoni_Szemle_logo.png'
+  mimetype: image/png
+features:
+  favicon: true

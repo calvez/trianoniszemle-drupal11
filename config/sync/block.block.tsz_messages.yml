@@ -1,0 +1,20 @@
+uuid: b3ac66af-386f-4056-b7a2-ffde027462a9
+langcode: hu
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tsz
+id: tsz_messages
+theme: tsz
+region: highlighted
+weight: -10
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Üzenetek
+  label_display: '0'
+  provider: system
+visibility: {  }

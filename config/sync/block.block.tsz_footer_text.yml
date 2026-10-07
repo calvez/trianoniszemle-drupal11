@@ -1,0 +1,23 @@
+uuid: 2284dbfb-9959-4f10-9634-2cc74cf820f9
+langcode: hu
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:798138ce-2d12-4fcb-88bf-9bc00cb81ab7'
+  module:
+    - block_content
+  theme:
+    - tsz
+id: tsz_footer_text
+theme: tsz
+region: footer_text
+weight: 0
+provider: null
+plugin: 'block_content:798138ce-2d12-4fcb-88bf-9bc00cb81ab7'
+settings:
+  id: 'block_content:798138ce-2d12-4fcb-88bf-9bc00cb81ab7'
+  label: 'Lábléc - elérhetőség'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

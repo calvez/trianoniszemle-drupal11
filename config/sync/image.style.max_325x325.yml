@@ -1,0 +1,26 @@
+uuid: eb6b9dba-bc98-4a46-9444-776f29d547ff
+langcode: hu
+status: true
+dependencies:
+  enforced:
+    module:
+      - responsive_image
+_core:
+  default_config_hash: NYdXGSUuntOsqPu-O1T_eMJudt12c2QecMq-URGl5TM
+name: max_325x325
+label: 'Legfeljebb 325×325 képpont'
+effects:
+  cb842cc8-682f-42a6-bd05-5a1ac726f0d8:
+    uuid: cb842cc8-682f-42a6-bd05-5a1ac726f0d8
+    id: image_scale
+    weight: 1
+    data:
+      width: 325
+      height: 325
+      upscale: false
+  f2b6c795-26ae-4130-aa18-aa120ea3ba98:
+    uuid: f2b6c795-26ae-4130-aa18-aa120ea3ba98
+    id: image_convert_avif
+    weight: 2
+    data:
+      extension: webp

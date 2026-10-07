@@ -1,0 +1,13 @@
+uuid: 13ae688f-d23f-4b81-b10d-a365034e5443
+langcode: hu
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: nh83qNNrmWE-CDdHz2MdFOAk60T9mzv3R-MaKfZR2jw
+id: media_publish_action
+label: 'Média közzététele'
+type: media
+plugin: 'entity:publish_action:media'
+configuration: {  }

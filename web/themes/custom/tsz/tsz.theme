@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Trianoni Szemle theme: preprocess hooks.
+ */
+
+use Drupal\views\Views;
+
+/**
+ * Renders a view display with arguments as a render array (or NULL).
+ */
+function tsz_embed_view(string $view_id, string $display, ...$args): ?array {
+  $view = Views::getView($view_id);
+  if (!$view) {
+    return NULL;
+  }
+  $build = $view->buildRenderable($display, $args);
+  return $build ?: NULL;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function tsz_preprocess_node(array &$variables): void {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+  $variables['created_date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'Y. F j.');
+  if ($variables['view_mode'] !== 'full') {
+    return;
+  }
+  if ($node->bundle() === 'cikk') {
+    $variables['authors'] = [];
+    foreach ($node->get('field_szerzo')->referencedEntities() as $author) {
+      $variables['authors'][] = ['id' => $author->id(), 'label' => $author->label()];
+    }
+    $issue = $node->get('field_szam')->entity;
+    $variables['issue'] = $issue ? ['id' => $issue->id(), 'label' => $issue->label()] : NULL;
+    $pdf = $node->get('field_pdf')->entity;
+    $variables['pdf_url'] = $pdf ? \Drupal::service('file_url_generator')->generateString($pdf->getFileUri()) : NULL;
+  }
+  if ($node->bundle() === 'lapszam') {
+    $variables['toc'] = tsz_embed_view('cikkek', 'block_issue', $node->id());
+  }
+  elseif ($node->bundle() === 'szerzo') {
+    $variables['articles'] = tsz_embed_view('cikkek', 'block_author', $node->id());
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view__szerzok(): A-Z navigation.
+ *
+ * Letters are derived from the real author names (accents folded), so letters
+ * without authors are shown disabled and new authors appear automatically.
+ */
+function tsz_preprocess_views_view__szerzok(array &$variables): void {
+  $titles = \Drupal::database()->select('node_field_data', 'n')
+    ->fields('n', ['title'])
+    ->condition('n.type', 'szerzo')->condition('n.status', 1)
+    ->execute()->fetchCol();
+  $translit = \Drupal::transliteration();
+  $present = [];
+  foreach ($titles as $t) {
+    $first = mb_strtoupper($translit->transliterate(mb_substr(trim($t), 0, 1), 'hu'));
+    if (preg_match('/^[A-Z]$/', $first)) {
+      $present[$first] = TRUE;
+    }
+  }
+  $current = strtoupper((string) \Drupal::request()->query->get('betu', ''));
+  $path = \Drupal::service('path.current')->getPath();
+  $items = ['#type' => 'inline_template', '#template' => '<ul class="alphabet" aria-label="Szerzők kezdőbetű szerint"><li><a href="{{ base }}"{% if not current %} aria-current="true"{% endif %}>Összes</a></li>{% for l in letters %}<li>{% if l.has %}<a href="{{ base }}?betu={{ l.char }}"{% if l.current %} aria-current="true"{% endif %}>{{ l.char }}</a>{% else %}<span aria-hidden="true">{{ l.char }}</span>{% endif %}</li>{% endfor %}</ul>'];
+  $letters = [];
+  foreach (range('A', 'Z') as $c) {
+    $letters[] = ['char' => $c, 'has' => isset($present[$c]), 'current' => $c === $current];
+  }
+  $items['#context'] = ['base' => '/szerzok', 'current' => $current, 'letters' => $letters];
+  $items['#cache'] = ['tags' => ['node_list:szerzo'], 'contexts' => ['url.query_args:betu']];
+  $variables['alphabet'] = $items;
+}

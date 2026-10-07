@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.cikk.field_szerzo
     - node.type.cikk
   module:
-    - file
     - text
     - user
 id: node.cikk.default
@@ -26,52 +25,20 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_alcim:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-      link_rel: canonical
-    third_party_settings: {  }
-    weight: 107
-    region: content
-  field_oldalszam:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 110
-    region: content
-  field_pdf:
-    type: file_default
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    weight: 111
-    region: content
-  field_szam:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 108
-    region: content
-  field_szerzo:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 109
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_alcim: true
+  field_evfolyam: true
+  field_kategoria: true
+  field_lapszam: true
+  field_oldalszam: true
+  field_pdf: true
+  field_sorszam: true
+  field_szam: true
+  field_szerzo: true
+  field_tipus: true
   langcode: true

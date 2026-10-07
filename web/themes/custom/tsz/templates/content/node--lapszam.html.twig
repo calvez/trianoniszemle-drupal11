@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Issue (lapszám): cover on the left, body + contents list on the right.
+ */
+#}
+{% if view_mode == 'full' %}
+  <article{{ attributes.addClass('node', 'node--lapszam') }}>
+    <div class="issue">
+      <div class="issue__cover">{{ content.field_kep }}</div>
+      <div class="issue__main">
+        {% if content.body|render|striptags|trim %}<div class="node__content">{{ content.body }}</div>{% endif %}
+        {% if toc %}<section class="toc"><h2>Tartalom</h2>{{ toc }}</section>{% endif %}
+      </div>
+    </div>
+  </article>
+{% else %}
+  <article{{ attributes.addClass('node', 'node--lapszam', 'node--' ~ view_mode) }}>
+    <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+    {{ content }}
+  </article>
+{% endif %}

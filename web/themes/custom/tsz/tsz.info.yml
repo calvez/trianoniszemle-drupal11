@@ -1,0 +1,35 @@
+name: Trianoni Szemle
+type: theme
+'base theme': false
+core_version_requirement: ^11
+description: 'Trianoni Szemle theme: slate header, green hero, Lato. Self-contained (no base theme).'
+libraries:
+  - tsz/base
+  - tsz/messages
+  - tsz/global
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - tsz/user
+  core/drupal.dropbutton:
+    - tsz/dropbutton
+  core/drupal.dialog:
+    - tsz/dialog
+  file/drupal.file:
+    - tsz/file
+  core/drupal.item-list:
+    - tsz/item-list
+  core/drupal.progress:
+    - tsz/progress
+  core/drupal.tablesort:
+    - tsz/drupal.tablesort
+regions:
+  header: 'Fejléc (logó)'
+  search: 'Keresés'
+  primary_menu: 'Főmenü'
+  hero: 'Oldalcím (hero)'
+  highlighted: 'Üzenetek'
+  help: 'Súgó'
+  content: 'Tartalom'
+  footer_text: 'Lábléc - szöveg'
+  footer_menu: 'Lábléc - menü'

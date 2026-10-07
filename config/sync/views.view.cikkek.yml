@@ -35,7 +35,8 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Cím
+          label: ''
+          element_label_colon: false
           type: string
           settings:
             link_to_entity: true
@@ -43,9 +44,11 @@ display:
           id: field_szerzo
           table: node__field_szerzo
           field: field_szerzo
+          relationship: none
           group_type: group
           plugin_id: field
-          label: Szerző
+          label: ''
+          element_label_colon: false
           type: entity_reference_label
           settings:
             link: true
@@ -56,8 +59,10 @@ display:
           id: field_szam
           table: node__field_szam
           field: field_szam
+          relationship: none
           plugin_id: field
-          label: Lapszám
+          label: ''
+          element_label_colon: false
           type: entity_reference_label
           settings:
             link: true
@@ -65,21 +70,24 @@ display:
           id: field_oldalszam
           table: node__field_oldalszam
           field: field_oldalszam
+          relationship: none
           plugin_id: field
-          label: Oldal
+          label: ''
+          element_label_colon: false
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
         field_pdf:
           id: field_pdf
           table: node__field_pdf
           field: field_pdf
+          relationship: none
           plugin_id: field
-          label: PDF
-          type: file_default
-          settings:
-            use_description_as_link_text: true
+          label: ''
+          element_label_colon: false
+          type: file_url_plain
+          settings: {  }
       pager:
         type: none
         options:
@@ -123,21 +131,14 @@ display:
             cikk: cikk
           group: 1
       style:
-        type: table
+        type: html_list
         options:
-          columns:
-            title: title
-            field_szerzo: field_szerzo
-            field_szam: field_szam
-            field_oldalszam: field_oldalszam
-            field_pdf: field_pdf
-          default: '-1'
-          info: {  }
-          override: true
-          sticky: false
-          empty_table: false
+          type: ul
+          wrapper_class: toc__wrap
+          class: toc-list
       row:
         type: fields
+        options: {  }
       query:
         type: views_query
         options: {  }
@@ -163,7 +164,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: Cikkek
+      title: ''
       fields:
         title:
           id: title
@@ -172,7 +173,8 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Cím
+          label: ''
+          element_label_colon: false
           type: string
           settings:
             link_to_entity: true
@@ -180,8 +182,10 @@ display:
           id: field_szam
           table: node__field_szam
           field: field_szam
+          relationship: none
           plugin_id: field
-          label: Lapszám
+          label: ''
+          element_label_colon: false
           type: entity_reference_label
           settings:
             link: true
@@ -189,21 +193,24 @@ display:
           id: field_oldalszam
           table: node__field_oldalszam
           field: field_oldalszam
+          relationship: none
           plugin_id: field
-          label: Oldal
+          label: ''
+          element_label_colon: false
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
         field_pdf:
           id: field_pdf
           table: node__field_pdf
           field: field_pdf
+          relationship: none
           plugin_id: field
-          label: PDF
-          type: file_default
-          settings:
-            use_description_as_link_text: true
+          label: ''
+          element_label_colon: false
+          type: file_url_plain
+          settings: {  }
       sorts:
         created:
           id: created
@@ -231,29 +238,16 @@ display:
           break_phrase: false
           not: false
           target_entity_type_id: node
-      style:
-        type: table
-        options:
-          columns:
-            title: title
-            field_szam: field_szam
-            field_oldalszam: field_oldalszam
-            field_pdf: field_pdf
-          default: '-1'
-          info: {  }
-          override: true
-          class: ''
-      row:
-        type: fields
-        options: {  }
       defaults:
         title: false
-        style: false
-        row: false
+        style: true
+        row: true
         fields: false
         sorts: false
         arguments: false
+        header: true
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'A szerző cikkei'
     cache_metadata:
@@ -274,7 +268,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
-      title: Cikkek
+      title: ''
       fields:
         title:
           id: title
@@ -283,7 +277,8 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Cím
+          label: ''
+          element_label_colon: false
           type: string
           settings:
             link_to_entity: true
@@ -291,9 +286,11 @@ display:
           id: field_szerzo
           table: node__field_szerzo
           field: field_szerzo
+          relationship: none
           group_type: group
           plugin_id: field
-          label: Szerző
+          label: ''
+          element_label_colon: false
           type: entity_reference_label
           settings:
             link: true
@@ -304,21 +301,24 @@ display:
           id: field_oldalszam
           table: node__field_oldalszam
           field: field_oldalszam
+          relationship: none
           plugin_id: field
-          label: Oldal
+          label: ''
+          element_label_colon: false
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
         field_pdf:
           id: field_pdf
           table: node__field_pdf
           field: field_pdf
+          relationship: none
           plugin_id: field
-          label: PDF
-          type: file_default
-          settings:
-            use_description_as_link_text: true
+          label: ''
+          element_label_colon: false
+          type: file_url_plain
+          settings: {  }
       sorts:
         field_oldalszam_value:
           id: field_oldalszam_value
@@ -344,29 +344,16 @@ display:
           break_phrase: false
           not: false
           target_entity_type_id: node
-      style:
-        type: table
-        options:
-          columns:
-            title: title
-            field_szerzo: field_szerzo
-            field_oldalszam: field_oldalszam
-            field_pdf: field_pdf
-          default: '-1'
-          info: {  }
-          override: true
-          class: ''
-      row:
-        type: fields
-        options: {  }
       defaults:
         title: false
-        style: false
-        row: false
+        style: true
+        row: true
         fields: false
         sorts: false
         arguments: false
+        header: true
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'Cikkek a lapszámban'
     cache_metadata:

@@ -1,0 +1,20 @@
+uuid: 97a25f8c-2b96-4f73-b07a-d303cbc6eb99
+langcode: hu
+status: true
+dependencies:
+  theme:
+    - tsz
+id: tsz_local_tasks
+theme: tsz
+region: highlighted
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Fülek
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

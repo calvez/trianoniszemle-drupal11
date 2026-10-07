@@ -1,0 +1,20 @@
+uuid: c69f7d91-b8bf-43f5-82aa-c9d9fa28ee0e
+langcode: hu
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - tsz
+id: tsz_help
+theme: tsz
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Súgó
+  label_display: '0'
+  provider: help
+visibility: {  }

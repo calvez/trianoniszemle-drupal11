@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Article (cikk): authors, issue, page number, PDF, optional body.
+ */
+#}
+{% if view_mode == 'full' %}
+  {# Render-and-discard so cache tags of referenced entities bubble up. #}
+  {% set _bubble = content.field_szerzo|render ~ content.field_szam|render ~ content.field_pdf|render %}
+  <article{{ attributes.addClass('node', 'node--cikk') }}>
+    <div class="article-meta">
+      {% if authors %}
+        <p class="article-meta__label">{{ authors|length > 1 ? 'Szerzők' : 'Szerző' }}:</p>
+        <p class="article-meta__authors">
+          {% for a in authors %}<a href="{{ path('entity.node.canonical', {'node': a.id}) }}">{{ a.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        </p>
+      {% endif %}
+      {% if node.field_alcim.value %}<p class="article-meta__sub">{{ node.field_alcim.value }}</p>{% endif %}
+      <p class="article-meta__info">
+        <span>Trianoni Szemle</span>
+        {% if issue %}<span><a href="{{ path('entity.node.canonical', {'node': issue.id}) }}">{{ issue.label }}</a></span>{% endif %}
+        {% if node.field_oldalszam.value %}<span>{{ node.field_oldalszam.value }}. oldal</span>{% endif %}
+      </p>
+      {% if pdf_url %}
+        <p><a class="btn" href="{{ pdf_url }}">PDF letöltése</a></p>
+      {% else %}
+        <p><span class="btn btn--muted">PDF nem elérhető</span></p>
+      {% endif %}
+    </div>
+    {% if content.body|render|striptags|trim %}
+      <div class="article-body node__content">{{ content.body }}</div>
+    {% endif %}
+  </article>
+{% else %}
+  <article{{ attributes.addClass('node', 'node--cikk', 'node--' ~ view_mode) }}>
+    <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+    {{ content }}
+  </article>
+{% endif %}

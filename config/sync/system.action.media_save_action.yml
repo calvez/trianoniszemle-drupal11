@@ -1,0 +1,13 @@
+uuid: c67bad53-3885-46e0-9984-d45c572079f3
+langcode: hu
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: VVyUA6PIaVeGtcIbgEWqJ6SYDiJdReBeojFswURFpKs
+id: media_save_action
+label: 'Média mentése'
+type: media
+plugin: 'entity:save_action:media'
+configuration: {  }

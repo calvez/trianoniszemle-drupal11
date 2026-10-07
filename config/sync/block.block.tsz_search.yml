@@ -1,0 +1,21 @@
+uuid: 76fc8b4d-2293-4387-845e-7721df8936c6
+langcode: hu
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - tsz
+id: tsz_search
+theme: tsz
+region: search
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Keresés
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

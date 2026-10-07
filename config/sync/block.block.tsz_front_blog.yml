@@ -1,0 +1,29 @@
+uuid: 253b04e4-f159-4dd4-a080-3fcdf2aa4b38
+langcode: hu
+status: true
+dependencies:
+  config:
+    - views.view.blog
+  module:
+    - system
+    - views
+  theme:
+    - tsz
+id: tsz_front_blog
+theme: tsz
+region: content
+weight: 12
+provider: null
+plugin: 'views_block:blog-block_latest'
+settings:
+  id: 'views_block:blog-block_latest'
+  label: 'Hírek, események'
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

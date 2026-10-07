@@ -1,0 +1,29 @@
+uuid: 520b02a5-073a-4fde-9c45-8cdb43d5e542
+langcode: hu
+status: true
+dependencies:
+  config:
+    - views.view.lapszamok
+  module:
+    - system
+    - views
+  theme:
+    - tsz
+id: tsz_front_issues
+theme: tsz
+region: content
+weight: 11
+provider: null
+plugin: 'views_block:lapszamok-block_latest'
+settings:
+  id: 'views_block:lapszamok-block_latest'
+  label: 'Legfrissebb lapszámok'
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

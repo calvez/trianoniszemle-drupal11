@@ -1,0 +1,9 @@
+{# Author card: photo, name, short bio. #}
+{% set bio = fields.body.content|render|striptags|trim %}
+<article class="author-card">
+  <div class="author-card__photo">{{ fields.field_kep.content }}</div>
+  <div class="author-card__body">
+    <h3 class="author-card__name">{{ fields.title.content }}</h3>
+    <p class="author-card__bio">{{ bio ?: 'Jelenleg nem elérhető leírás a szerzőhöz.' }}</p>
+  </div>
+</article>

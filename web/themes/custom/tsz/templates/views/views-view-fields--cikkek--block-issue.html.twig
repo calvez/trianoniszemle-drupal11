@@ -1,0 +1,7 @@
+{# Issue contents row: "7. oldal  Author: Title  PDF" #}
+{% set pdf = fields.field_pdf.content|render|striptags|trim %}
+<span class="toc__page">{% if fields.field_oldalszam.content|render|striptags|trim %}{{ fields.field_oldalszam.content|render|striptags|trim }}. oldal{% endif %}</span>
+<span class="toc__text">
+  {% if fields.field_szerzo.content|render|striptags|trim %}<span class="toc__author">{{ fields.field_szerzo.content }}:</span> {% endif %}<span class="toc__title">{{ fields.title.content }}</span>
+</span>
+<span class="toc__pdf">{% if pdf %}<a href="{{ pdf }}">PDF</a>{% endif %}</span>

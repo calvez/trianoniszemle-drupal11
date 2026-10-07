@@ -6,11 +6,10 @@ dependencies:
     - field.field.node.szerzo.body
     - field.field.node.szerzo.field_kep
     - field.field.node.szerzo.field_tipus
-    - image.style.medium
+    - image.style.large
     - node.type.szerzo
   module:
     - image
-    - options
     - text
     - user
 id: node.szerzo.default
@@ -27,21 +26,14 @@ content:
     region: content
   field_kep:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: medium
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 105
-    region: content
-  field_tipus:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 104
+    weight: 0
     region: content
   links:
     settings: {  }
@@ -49,4 +41,14 @@ content:
     weight: 100
     region: content
 hidden:
+  field_alcim: true
+  field_evfolyam: true
+  field_kategoria: true
+  field_lapszam: true
+  field_oldalszam: true
+  field_pdf: true
+  field_sorszam: true
+  field_szam: true
+  field_szerzo: true
+  field_tipus: true
   langcode: true

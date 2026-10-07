@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Page layout for the Trianoni Szemle theme.
+ *
+ * Regions: header (logo), search, primary_menu, hero (page title), highlighted
+ * (messages), help, content, footer_text, footer_menu.
+ */
+#}
+{% set theme_path = base_path ~ directory %}
+<div class="site">
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="site-header__brand">
+        {% if page.header %}{{ page.header }}{% else %}
+          <a href="{{ front_page }}" rel="home" class="site-logo"><img src="{{ theme_path }}/images/header_logo.svg" alt="Trianoni Szemle" width="260" height="58"></a>
+        {% endif %}
+      </div>
+      <div class="site-header__tools">
+        <div class="site-header__search">{{ page.search }}</div>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span><span class="nav-toggle__label">{{ 'Menu'|t }}</span>
+        </button>
+      </div>
+      <div class="site-header__menu" id="primary-nav">{{ page.primary_menu }}</div>
+    </div>
+    <div class="rule" aria-hidden="true"></div>
+  </header>
+
+  {% if is_front %}
+    <section class="front-hero" aria-label="Trianoni Szemle">
+      <img src="{{ theme_path }}/images/tsz_home_logo.svg" alt="Trianoni Szemle - A Trianon Kutatóintézet Közhasznú Alapítvány folyóirata. Alapítva: 2009">
+    </section>
+  {% elseif page.hero %}
+    <section class="hero {{ node ? 'hero--band' : 'hero--plain' }}">
+      <div class="container">{{ page.hero }}</div>
+    </section>
+  {% endif %}
+
+  {% if page.highlighted %}<div class="container messages-wrap">{{ page.highlighted }}</div>{% endif %}
+
+  <main class="main">
+    <a id="main-content" tabindex="-1"></a>
+    <div class="container">
+      {{ page.help }}
+      {{ page.content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__logos">
+        <img src="{{ theme_path }}/images/tsz_logo.svg" alt="Trianoni Szemle - Anno 2009" width="200" height="200">
+        <img src="{{ theme_path }}/images/ki_logo.svg" alt="Trianon Kutatóintézet - Anno 2007" width="200" height="200">
+      </div>
+      <div class="site-footer__text">{{ page.footer_text }}</div>
+    </div>
+    {% if page.footer_menu %}<div class="site-footer__bottom container">{{ page.footer_menu }}</div>{% endif %}
+  </footer>
+
+</div>

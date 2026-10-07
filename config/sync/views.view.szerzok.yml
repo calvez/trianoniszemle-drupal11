@@ -1,0 +1,189 @@
+uuid: f318f9c9-3f20-47d7-88b1-625bc6c53c5e
+langcode: hu
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_kep
+    - image.style.medium
+    - node.type.szerzo
+    - system.menu.main
+  module:
+    - image
+    - node
+    - text
+    - user
+id: szerzok
+label: Szerzők
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Alapértelmezett
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Szerzők
+      fields:
+        field_kep:
+          id: field_kep
+          table: node__field_kep
+          field: field_kep
+          relationship: none
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: image
+          settings:
+            image_link: content
+            image_style: medium
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: string
+          settings:
+            link_to_entity: true
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: text_trimmed
+          settings:
+            trim_length: 110
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 48
+          tags:
+            next: 'Következő ›'
+            previous: '‹ Előző'
+            first: '« Első'
+            last: 'Utolsó »'
+          quantity: 7
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Keresés
+          reset_button: false
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            szerzo: szerzo
+          group: 1
+        betu:
+          id: betu
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: starts
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Kezdőbetű
+            identifier: betu
+            required: false
+            remember: false
+      style:
+        type: html_list
+        options:
+          type: ul
+          class: cards
+      row:
+        type: fields
+        options: {  }
+      query:
+        type: views_query
+        options: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_kep'
+  page_1:
+    id: page_1
+    display_title: Oldal
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: szerzok
+      menu:
+        type: normal
+        title: Szerzők
+        weight: 3
+        menu_name: main
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_kep'

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Author (szerző): photo, bio, list of articles.
+ */
+#}
+{% if view_mode == 'full' %}
+  {% set has_photo = content.field_kep|render|striptags|trim is not empty or node.field_kep.entity is not empty %}
+  <article{{ attributes.addClass('node', 'node--szerzo') }}>
+    <div class="author{{ has_photo ? '' : ' author--nophoto' }}">
+      {% if has_photo %}<div class="author__photo">{{ content.field_kep }}</div>{% endif %}
+      <div class="author__main">
+        {% if content.body|render|striptags|trim %}<div class="node__content">{{ content.body }}</div>{% endif %}
+        {% if articles %}
+          <section class="author__articles">
+            <h2>A Trianoni Szemlében megjelent írásai</h2>
+            {{ articles }}
+          </section>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+{% else %}
+  <article{{ attributes.addClass('node', 'node--szerzo', 'node--' ~ view_mode) }}>
+    <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+    {{ content }}
+  </article>
+{% endif %}

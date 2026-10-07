@@ -45,7 +45,8 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Cím
+          label: ''
+          element_label_colon: false
           type: string
           settings:
             link_to_entity: true
@@ -53,12 +54,15 @@ display:
           id: field_evfolyam
           table: node__field_evfolyam
           field: field_evfolyam
+          relationship: none
           plugin_id: field
-          label: Évfolyam
+          label: ''
+          exclude: true
+          element_label_colon: false
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
       pager:
         type: none
         options:
@@ -75,6 +79,12 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_evfolyam_value:
+          id: field_evfolyam_value
+          table: node__field_evfolyam
+          field: field_evfolyam_value
+          plugin_id: standard
+          order: DESC
         field_sorszam_value:
           id: field_sorszam_value
           table: node__field_sorszam
@@ -104,11 +114,16 @@ display:
       style:
         type: html_list
         options:
+          grouping:
+            -
+              field: field_evfolyam
+              rendered: true
+              rendered_strip: false
           type: ul
-          wrapper_class: item-list
-          class: lapszamok
+          class: cards
       row:
         type: fields
+        options: {  }
       query:
         type: views_query
         options: {  }
@@ -138,9 +153,19 @@ display:
         options:
           offset: 0
           items_per_page: 4
+      style:
+        type: html_list
+        options:
+          type: ul
+          class: cards
+      row:
+        type: fields
+        options: {  }
       defaults:
         title: false
         pager: false
+        style: false
+        row: false
       display_description: ''
       display_extenders: {  }
       block_description: 'Legfrissebb lapszámok'

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Blog post, full page.
+ */
+#}
+{% if view_mode == 'full' %}
+  <article{{ attributes.addClass('node', 'node--blog-post') }}>
+    <div class="article-meta"><p class="card__date"><time datetime="{{ node.createdtime|date('c') }}">{{ created_date }}</time></p></div>
+    <div class="article-body node__content">{{ content.body }}</div>
+  </article>
+{% else %}
+  <article{{ attributes.addClass('node', 'node--' ~ view_mode) }}><h2><a href="{{ url }}">{{ label }}</a></h2>{{ content }}</article>
+{% endif %}

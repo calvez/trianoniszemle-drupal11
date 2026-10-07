@@ -1,0 +1,20 @@
+uuid: 15d51390-7718-449e-8ddb-427104b08443
+langcode: hu
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tsz
+id: tsz_content
+theme: tsz
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Fő tartalom'
+  label_display: '0'
+  provider: system
+visibility: {  }

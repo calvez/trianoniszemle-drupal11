@@ -1,0 +1,10 @@
+{#
+/**
+ * @file
+ * Basic page.
+ */
+#}
+<article{{ attributes.addClass('node', 'node--page', 'node--' ~ view_mode) }}>
+  {% if view_mode != 'full' %}<h2><a href="{{ url }}">{{ label }}</a></h2>{% endif %}
+  <div class="article-body node__content">{{ content.body }}</div>
+</article>
