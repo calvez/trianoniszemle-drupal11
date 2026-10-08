@@ -1,8 +1,8 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
+    "name": "trianoniszemle/website",
+    "description": "Trianoni Szemle - Drupal 11 website (journal archive: issues, articles, authors, blog).",
     "type": "project",
-    "license": "GPL-2.0-or-later",
+    "license": "proprietary",
     "homepage": "https://www.drupal.org/project/drupal",
     "support": {
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
@@ -43,12 +43,21 @@
             "php-tuf/composer-integration": true,
             "symfony/runtime": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "8.3.0"
+        },
+        "optimize-autoloader": true
     },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/robots.txt": {
+                    "append": "assets/robots-append.txt"
+                }
             }
         },
         "installer-paths": {
@@ -104,5 +113,13 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "deploy": "vendor/bin/drush deploy -y",
+        "security-check": "composer audit --no-dev"
+    },
+    "scripts-descriptions": {
+        "deploy": "Run Drupal database updates, import config and rebuild caches.",
+        "security-check": "List known security advisories for installed packages."
     }
 }

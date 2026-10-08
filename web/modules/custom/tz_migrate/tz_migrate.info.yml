@@ -1,0 +1,12 @@
+name: 'Trianoni Szemle legacy migration'
+type: module
+description: 'One-off import of the old Drupal 8 site (authors, issues, articles, blog, pages, files, redirects, menus) via "drush tz:migrate". Core APIs only. Safe to uninstall after the cutover.'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:file
+  - drupal:menu_link_content
+  - drupal:taxonomy
+  - pathauto:pathauto
+  - redirect:redirect

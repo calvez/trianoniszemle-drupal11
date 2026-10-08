@@ -1,0 +1,4 @@
+
+# Trianoni Szemle
+Disallow: /search/
+Sitemap: https://trianoniszemle.hu/sitemap.xml

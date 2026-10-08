@@ -1,4 +1,5 @@
-# Site address for command-line runs (cron, sitemap generation, emails).
-# CHANGE THIS to https://trianoniszemle.hu at cutover.
+# Default site address for command-line runs (cron, sitemap generation, e-mails).
+# Override per server with the environment variable DRUSH_OPTIONS_URI, e.g.
+#   DRUSH_OPTIONS_URI=https://trianon.clvz.dev
 options:
-  uri: 'https://trianon.clvz.dev'
+  uri: 'https://trianoniszemle.hu'
