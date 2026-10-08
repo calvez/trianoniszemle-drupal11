@@ -34,8 +34,9 @@ if (!function_exists('tz_env')) {
         }
       }
     }
+    // A variable that is set - even to an empty string - wins over .env and the default.
     $value = getenv($key);
-    if ($value !== FALSE && $value !== '') {
+    if ($value !== FALSE) {
       return $value;
     }
     return $file[$key] ?? $default;
