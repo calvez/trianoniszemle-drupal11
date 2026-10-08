@@ -6,7 +6,6 @@ dependencies:
     - filter.format.restricted_html
   module:
     - filter
-    - media
     - search
     - system
 _core:
@@ -19,4 +18,3 @@ permissions:
   - 'access content'
   - 'search content'
   - 'use text format restricted_html'
-  - 'view media'

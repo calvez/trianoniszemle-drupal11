@@ -19,12 +19,8 @@ module:
   help: 0
   image: 0
   language: 0
-  layout_builder: 0
-  layout_discovery: 0
   link: 0
   locale: 0
-  media: 0
-  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -35,11 +31,9 @@ module:
   path: 0
   path_alias: 0
   redirect: 0
-  responsive_image: 0
   search: 0
   search_node: 0
   simple_sitemap: 0
-  syslog: 0
   system: 0
   taxonomy: 0
   text: 0

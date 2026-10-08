@@ -7,7 +7,6 @@ dependencies:
   module:
     - file
     - filter
-    - media
     - search
     - system
 _core:
@@ -21,4 +20,3 @@ permissions:
   - 'delete own files'
   - 'search content'
   - 'use text format basic_html'
-  - 'view media'
