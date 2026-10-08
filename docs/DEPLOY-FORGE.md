@@ -65,14 +65,26 @@ Forge's default `try_files $uri $uri/ /index.php?$query_string;` is what Drupal 
 Configuration* add inside the `server` block:
 
 ```nginx
-# Never execute PHP or serve dumps from the upload folders
+client_max_body_size 25M;
+
+# Never run PHP from the upload folders, never serve dumps or editor leftovers
 location ~* ^/sites/.*/files/.*\.php$ { deny all; }
-location ~* \.(sql|gz|tar|zip|bak|orig|swp)$ { deny all; }
-# Long cache for theme and uploaded files
-location ~* ^/(sites/default/files|themes)/.*\.(jpg|jpeg|png|gif|webp|avif|svg|css|js|woff2)$ { expires 30d; access_log off; }
+location ~* \.(sql|bak|orig|swp|old|tar|gz|tgz)$ { deny all; }
+
+# Long browser cache for static files. Files that do not exist yet (image style derivatives) MUST still
+# reach Drupal, which generates them on the first request - hence the try_files line.
+location ~* ^/(sites/default/files|themes|core)/.*\.(jpg|jpeg|png|gif|webp|avif|svg|css|js|woff2)$ {
+    try_files $uri /index.php?$query_string;
+    expires 30d;
+    access_log off;
+}
 ```
 
-(The `deny` for `.zip` etc. also blocks download links to such files - they are not used on this site.) Reload nginx.
+(`.zip` is deliberately **not** denied: zip files can be attached to pages.) Reload nginx.
+
+**Do not enable a server-side FastCGI/page cache in front of Drupal** unless it bypasses logged-in users: Drupal's session
+cookies are named `SESS...` / `SSESS...`, and cache rules written for WordPress (as in Ploi's default) do not know them,
+so logged-in pages - including unpublished content - could be served to visitors. Drupal's own page cache is enough.
 
 ## 7. Scheduler, SSL, backups
 
