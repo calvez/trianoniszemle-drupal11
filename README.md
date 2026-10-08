@@ -3,7 +3,7 @@
 The website of the journal **Trianoni Szemle** (publisher: Trianon Kutatóintézet Közhasznú Alapítvány): a searchable
 archive of every issue, article and author (with the article PDFs), a news blog and a handful of static pages.
 
-* Drupal **11.4**, PHP **8.3**, MySQL **8**, hosted on Laravel Forge
+* Drupal **11.4**, PHP **8.3**, MySQL **8**; live on the Ploi-managed server `drupals` since 2026-10-08 (the repository is also Forge-ready)
 * ~2,000 pieces of content: 509 authors, 43 issues, 1,355 articles (201 with a PDF), 98 blog posts, 10 pages
 * Hungarian site and admin interface; every URL of the previous (Drupal 8) site still works
 * Designed to be **small and low-maintenance**: plain Drupal core, four well-established contributed modules,
@@ -36,13 +36,15 @@ Further guides: [`docs/DEPLOY-FORGE.md`](docs/DEPLOY-FORGE.md) · [`docs/MIGRATI
 
 ## 1. Status
 
-State on 2026-10-08. The new site runs on a staging server (`trianon.clvz.dev`); the old site is still the live one
-(`trianoniszemle.hu`) and has not been touched.
+State on 2026-10-08. The new site is **live at https://trianoniszemle.hu**, served from this repository's working copy
+(`/home/ploi/trianon.clvz.dev`, with `/home/ploi/trianoniszemle.hu` as a symlink to it) through nginx and PHP 8.3-FPM.
+The previous Drupal 8 site is kept, untouched, at `/home/ploi/trianoniszemle.hu-old-2026-10-08` and is backed up in full on the
+off-server storage (restore guide: `RESTORE.md` in that backup). Staging address `trianon.clvz.dev` serves the same site (with `noindex`).
 
 **Verified**
 
 * The complete migration was run from scratch on the staging server (about 2.5 minutes) and `drush tz:migrate-verify` passes.
-* Every old URL resolves: all 2,013 published aliases return 200, about 1,930 old redirects land on a live page.
+* **After the release**, against the production domain: every old URL resolves - all 2,013 published aliases return 200, about 1,930 old redirects land on a live page.
   The only non-200 answers are 403s for one unpublished article and one unpublished blog post (also hidden on the old site).
 * Text and image coverage compared with the live site, page by page (150 pages): blog 99.4 %, articles 99.8 %, issues 100 %.
 * A clean `git clone` installs from `composer.lock` and contains every module, theme and asset the configuration needs.
@@ -50,7 +52,7 @@ State on 2026-10-08. The new site runs on a staging server (`trianon.clvz.dev`);
 
 **Not yet done**
 
-* A first install on a *completely empty* database with `drush site:install --existing-config` (the step Forge will do) has not been
+* A first install on a *completely empty* database with `drush site:install --existing-config` (what a move to Forge would do) has not been
   rehearsed end to end; the configuration is complete according to the clean-clone check.
 * The contact form that was on the *Rólunk* page was not carried over (Drupal's Contact module is not enabled).
 * Three files are missing on the old live site as well and therefore cannot be migrated (see [§13](#13-migration-of-the-old-site)).
