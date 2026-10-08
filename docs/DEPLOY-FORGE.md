@@ -86,10 +86,10 @@ location ~* ^/(sites/default/files|themes)/.*\.(jpg|jpeg|png|gif|webp|avif|svg|c
 
 ## 8. Cutover checklist
 
-1. Staging copy complete, `drush tz:migrate-verify` all OK, click through `/`, `/evfolyamok`, `/repertorium`, `/szerzok`, `/blog`, an article PDF.
+1. Staging copy complete, `drush tz:migrate-verify` all OK and `bash scripts/smoke-test.sh https://<staging-address>` passes (add `SAMPLE_PDF=/system/files/...`); then look at it in a browser, on a phone too.
 2. Re-import the **latest** old database dump and run `bash scripts/migrate-legacy.sh` again - existing items are skipped, anything new on the old site is added.
 3. Lower the DNS TTL a day before; keep the old server running.
-4. Point DNS to the Forge server; request the certificate; confirm `https://trianoniszemle.hu/sitemap.xml` and `/robots.txt`.
+4. Point DNS to the Forge server; request the certificate; run `bash scripts/smoke-test.sh https://trianoniszemle.hu` (also confirms `/sitemap.xml` and `/robots.txt`).
 5. Submit the sitemap in Google Search Console. Old URLs keep working (same paths + 1,900 redirects).
 6. After a week without problems: follow "After go-live" in `docs/MIGRATION.md`.
 

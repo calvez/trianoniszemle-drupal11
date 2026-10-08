@@ -21,7 +21,8 @@ composer update drupal/core-recommended drupal/core-composer-scaffold drupal/cor
 composer update "drupal/*" drush/drush --with-all-dependencies      # contributed modules + drush
 vendor/bin/drush updatedb -y && vendor/bin/drush config:export -y
 composer audit --no-dev                                              # must report nothing
-# click through: /, /evfolyamok, an issue, an article PDF, /repertorium, /szerzok, /blog, search, log in as editor
+bash scripts/smoke-test.sh https://trianoniszemle.hu       # key pages, search, sitemap, robots, login (set SAMPLE_PDF=/system/files/... to test a PDF too)
+# then log in as an editor and open /node/add/cikk once
 git add composer.lock config && git commit -m "Monthly update" && git push      # Forge deploys (Quick Deploy) or click Deploy
 ```
 
